@@ -1,0 +1,33 @@
+<html>
+
+<head>{% block title %}
+    <h1>Temperatures from:</h1> {% endblock%}</head>
+
+<body>
+    <h1>{{start_date}} to </h1>
+
+    <h1>{{end_date}} </h1>
+    <h2></h2>
+
+    <br>
+
+    <table border="1">
+        <tr>
+            <td>minimum</td>
+            <td>average</td>
+            <td>maximum</td>
+        </tr>
+
+        {% for result in start %}
+        <tr>
+            {% for elem in result %}
+            <td>{{elem}}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+
+    </table>
+
+</body>
+
+</html>

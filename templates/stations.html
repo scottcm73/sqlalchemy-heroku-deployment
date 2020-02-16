@@ -1,0 +1,28 @@
+<html>
+
+<head>{% block title %} Stations {% endblock%}</head>
+
+<body>
+    <h1>Stations</h1>
+
+    <h2>List of Station Activity</h2>
+
+    <h2>by Frequency Count of Precipitation Observations</h2>
+    <br>
+
+    <table border="1">
+
+        {% for result in station_frequency_count %}
+        <tr>
+            {% for elem in result %}
+            <td>{{elem}}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    
+    </table>
+    <br>
+    {{test_json}}
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+<html>
+
+<head>{% block title %} Temperature {% endblock%}</head>
+
+<body>
+    <h1>Temperature</h1>
+    <h2>List of Temperatures at Most Active Station</h2>
+
+    <h3>{{ station }}</h3>
+    <table border="1">
+
+        {% for result in the_temps %}
+        <tr>
+            {% for elem in result %}
+            <td>{{elem}}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+
+    </table>
+</body>
+
+</html>

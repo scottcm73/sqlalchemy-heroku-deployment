@@ -1,0 +1,18 @@
+<html>
+
+<body>
+
+    <h1>Precipitation</h1>
+
+    <h2>Monthly Totals</h2>
+
+    <br>
+    <br> {{ test | safe}}
+    <br>
+    <img src="{{ url_for('static', filename='hawaii_precipitation_plot.png') }}" alt="hawaii" height="500" width="600">
+    <br>
+    <br>
+    {{test_json}}
+</body>
+
+</html>
