@@ -91,7 +91,7 @@ class DictMixIn:
 class Measurement(Base, DictMixIn):
     __tablename__ = "measurement"
     id = Column(Integer, primary_key=True)
-    station = Column(String)
+    station = Column(String(30))
     date = Column(Date)
     prcp = Column(Float)
     tobs = Column(Float)
@@ -100,21 +100,25 @@ class Measurement(Base, DictMixIn):
 class Station(Base, DictMixIn):
     __tablename__ = "station"
     id = Column(Integer, primary_key=True)
-    station = Column(String)
-    name = Column(String)
+    station = Column(String(30))
+    name = Column(String(50))
     latitude = Column(Float)
     longitude = Column(Float)
     elevation = Column(Float)
 
 
-session = Session(engine)
+
 
 app = Flask(__name__)
-
+@app.before_first_request
+def init_app():
+    db_path = os.path.join("Resources", "hawaii.sqlite")
+    engine = create_engine(f"sqlite:///{db_path}")
+    session = Session(engine)
 
 @app.route("/")
 def main():
-    main = "main"
+    
     return render_template("index.html")
 
 
