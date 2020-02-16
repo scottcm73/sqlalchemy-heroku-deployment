@@ -1,2 +1,5 @@
 hawaii.sqlite
 .vscode/
+hawaii_measurements.csv
+hawaii_stations.csv
+hawaii_stations 2.csv
